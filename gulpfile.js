@@ -24,7 +24,13 @@ gulp.task('name', function () {
 
 /* 1. CSS prepocessing */
 gulp.task('css', function () {
-  return gulp.src('src/sass/styles.scss')
-                .pipe(sass())
+  return gulp.src('src/sass/**/*.scss') //set Gulp to find every .scss file not including partials for conversion
+  //set gulp-sourcemaps so that source maps are created by adding 2 pipes: one for initialization and one for the source map writing itself
+                .pipe(sourcemaps.init()) // init comes before the processing
+                .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError)) // compress output and log errors for debugging
+                .pipe(autoprefixer({
+                  browsers: ["last 2 versions"]
+                })) // add autoprefixer just after the Sass conversion and before writing sourcemaps
+                .pipe(sourcemaps.write('./maps')) // writing of the sourcemaps comes after processing
                 .pipe(gulp.dest('dist/css'));
 });
