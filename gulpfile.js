@@ -34,3 +34,12 @@ gulp.task('css', function () {
                 .pipe(sourcemaps.write('./maps')) // writing of the sourcemaps comes after processing
                 .pipe(gulp.dest('dist/css'));
 });
+
+/* 2. Images Optimization */
+
+gulp.task('images', function(){
+  // take every image in the images/ and run imagemin() on them and output them to the dist/images/
+  return gulp.src('src/images/*')
+                .pipe(imagemin())
+                .pipe(gulp.dest('dist/images'));
+});
