@@ -43,3 +43,9 @@ gulp.task('images', function(){
                 .pipe(imagemin())
                 .pipe(gulp.dest('dist/images'));
 });
+
+/* 3. Create a copy task so that tasks that are not processed simply be copied to the dist/ */
+gulp.task('copy', function(){
+  return gulp.src('src/*.html')
+                .pipe(gulp.dest('dist')); // if we just use gulp.dest() after gulp.src(), the result would be a copy of those files to the destination-folder
+});
