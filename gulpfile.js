@@ -59,12 +59,18 @@ gulp.task('browserSync', function(){
     server: {
       baseDir: 'dist'
     }
-  })
-})
-
-/* to tell browserSync to update the page We need to add one pipe to the css task
+  });
+}); /* to tell browserSync to update the page We need to add one pipe to the css task
 * and another to the copy task:.pipe(browserSync.stream())
 * It is important that it is the last pipe to run as browserSync will reload just after new or modified files are in place
 */
 
-/* 5 Configure the watch task */
+/* 5 Configure the watch task to watch for html and sass files changes */
+
+gulp.task('watch', ['browserSync', 'css'], function(){
+  // supply the files to watch and the task to run in each case
+  gulp.watch('src/sass/**/*.scss', ['css']); // if scss files are changed, run css
+  gulp.watch('src/*.html', ['copy']); // if html files are changed run copy
+});
+
+/* now we can run gulp watch to start browserSync */
