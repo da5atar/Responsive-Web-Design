@@ -1,1 +1,1 @@
-{"version":3,"sources":["base/_typography.scss","config/_config.scss"],"names":[],"mappings":"AAAA,KACE,kBCIkB,CDHnB","file":"../styles.css","sourcesContent":["body {\n  background: $color-base;\n}\n","//\n// -- Config\n//\n\n// colors\n$color-base: #15263e;\n$color-base-light: #374362;\n$color-gradient1: #b119ec;\n$color-gradient2: #f8027e;\n$color-highlight: #a91aef;\n\n// widths\n$site-width: 75em;\n"]}
+{"version":3,"sources":[],"names":[],"mappings":"","file":"../styles.css","sourcesContent":[]}

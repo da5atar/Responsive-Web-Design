@@ -1,0 +1,14 @@
+// For calculating from pixels to or rem...
+// let's create a function that has two args, pixels and ref for reference
+@function em($pixels, $ref: 16) {
+  @return ($pixels / $ref) * 1em;
+}
+
+// rem function
+
+@function rem($pixels, $ref: 16) {
+  @return ($pixels / $ref) * 1rem;
+}
+
+// mixins for responsiveness of the page: general media queries tailored for
+// some responsive breakpoints: configure width first in the _config.scss file
