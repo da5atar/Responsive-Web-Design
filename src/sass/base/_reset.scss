@@ -1,0 +1,40 @@
+// for the box model to work
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+// remove margins and paddings in order to reassign as necessary
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+// set all headings to normal font weight
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: normal;
+}
+
+// remove list styles from ul
+
+ul {
+  list-style: none;
+}
+
+// set media elements to 100% max-width, very important for responsive Web design
+
+img, video, embed, object {
+  max-width: 100%;
+}
+
+// avoid unnecessary whitespace below images
+
+img {
+  vertical-align: middle;
+}
+
+// pointer cursor for buttons and labels (preference)
+label, button {
+  cursor: pointer;
+}

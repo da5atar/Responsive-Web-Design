@@ -1,0 +1,13 @@
+// before and after clearfix, we apply the content property and display: table
+// & means the parent element
+// this is to work with our grid system and other kinds of floated elements
+.clearfix {
+  &::before, &::after {
+    content: "";
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
+}

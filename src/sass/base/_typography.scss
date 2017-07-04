@@ -1,1 +1,13 @@
+// for html and body, confirm white background and black font color
+html, body {
+  background: #FFF;
+  color: #000;
+}
 
+// for body and main form elements which do not auto inherit font size and family
+//... we assign the "Open Sans" font and font-size of 100% (1em or 16px)
+
+body, input, select, textarea, button {
+  font-family: "Open Sans", sans-serif;
+  font-size: 100%;
+}
