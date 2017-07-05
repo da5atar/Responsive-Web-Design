@@ -1,0 +1,20 @@
+//
+// -- Grid Mixins
+//
+
+@mixin generate_grid($type, $gutter) {
+  //use placeholder
+  %grid-#{$type}--base {
+    float: left;
+    padding-left: $gutter;
+    padding-right: $gutter;
+  }
+  // iterate
+  @for $i from 1 through 12 {
+    .grid-#{$type}--#{$i} {
+      @extend %grid-#{$type}--base;
+      // set widths
+      width: (100% / 12) * $i;
+    }
+  }
+}

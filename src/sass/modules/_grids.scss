@@ -1,0 +1,36 @@
+//
+//-- Grid Systems
+//
+
+// Set the variable for the gutter
+
+$grid-gutter: 16px;
+
+// Set the negative margin for the grid wrapper (same no matter the screen width)
+
+.grid {
+  margin-left: $grid-gutter;
+  margin-right: $grid-gutter;
+}
+
+// bring mixin into play
+
+// Generate an extra small grid for small screens or browsers without media
+// queries support
+
+@include generate_grid(xs, $grid-gutter);
+
+// then use the media queries of our choice and change the type of the grid so
+// to generate alternatives for other screen sizes
+
+@include phone-land {
+  @include generate_grid(sm, $grid-gutter);
+}
+
+@include tablet-port {
+  @include generate_grid(md, $grid-gutter);
+}
+
+@include tablet-land {
+  @include generate_grid(lg, $grid-gutter);
+}
