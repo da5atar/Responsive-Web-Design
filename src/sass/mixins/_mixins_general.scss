@@ -19,3 +19,12 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
+
+//removes underline of the link and adds it back when the mouse hovers over it
+@mixin hover-underline {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
