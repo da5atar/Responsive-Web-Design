@@ -12,3 +12,10 @@
 
 // mixins for responsiveness of the page: general media queries tailored for
 // some responsive breakpoints: configure width first in the _config.scss file
+
+@mixin vertical-center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
