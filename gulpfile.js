@@ -47,7 +47,7 @@ gulp.task('images', function(){
 
 /* 3. Create a copy task so that tasks that are not processed simply be copied to the dist/ */
 gulp.task('copy', function(){
-  return gulp.src('src/*.html')
+  return gulp.src('src/**/*.+(html|js)') // pattern means gulp will search for every folder in src for html and js and 'copy' them
                 .pipe(gulp.dest('dist')) // if we just use gulp.dest() after gulp.src(), the result would be a copy of those files to the destination-folder
                 .pipe(browserSync.stream());
 });

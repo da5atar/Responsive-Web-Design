@@ -6,23 +6,35 @@
 	background: $color-base;
 	color: #FFF;
 	text-align: center;
-	padding: 1.5em;
+	padding: 1em 0 0; // change a bit of the padding inside the nav so it occupies less space
+
+	@include tablet-port {
+		padding: 1.5em;
+	}
 }
 
 .page-nav__li {
-	display: inline-block;
 	position: relative;
+	// on smaller screens, we want menu items to be shown as vertical lists
+	//  so we show border-bottom for each li
+	border-bottom: 1px solid #CCC;
+	// ... and remove the dashes
+	//... adding them just at the tablet-port breakpoint
+	@include tablet-port {
+		border: 0;
+		display: inline-block;
 
-	&::after {
-		content: "-";
-		position: absolute;
-		top: 50%;
-		right: -0.15em;
-		transform: translate(0, -50%);
-	}
+		&::after {
+			content: "-";
+			position: absolute;
+			top: 50%;
+			right: -0.15em;
+			transform: translate(0, -50%);
+		}
 
-	&:last-child::after {
-		display: none;
+		&:last-child::after {
+			display: none;
+		}
 	}
 }
 
@@ -33,9 +45,41 @@
 	text-transform: uppercase;
 	transition: opacity 0.2s ease;
 	font-size: em(18);
-	padding: 1em 2em;
+	padding: 0.5em 1em;
 
 	&:hover {
 		opacity: 0.7;
+	}
+	// change font-size and padding for each item
+	@include tablet-port {
+		font-size: em(18);
+		padding: 1em 2em;
+	}
+}
+
+// style the hamburger icon
+
+.page-nav__hamburger {
+	display: inline-block;
+	cursor: pointer;
+	transition: transform 0.2s ease;
+	margin-bottom: 1em;
+
+	&:hover {
+		transform: scale(1.2);
+	}
+	// hide it at the tablet-port breakpoint
+	@include tablet-port {
+		display: none;
+	}
+}
+
+// hide the nav ul in smaller screens
+
+.page-nav__ul {
+	display: none;
+
+	@include tablet-port {
+		display: block !important;
 	}
 }
