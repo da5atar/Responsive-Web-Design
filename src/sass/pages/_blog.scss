@@ -1,0 +1,90 @@
+//
+//-- Blog
+//
+
+// General styles for the blog post
+
+.blog__item {
+  font-size: em(18);
+  margin-bottom: 4em;
+}
+
+// add a margin for the image container and hover-border mixin for the links
+
+.blog__item-image-container {
+  margin-bottom: 1.5em;
+
+  a {
+    display: block;
+    @include hover-border;
+  }
+
+  // make image fit the area of the grid column
+  img {
+    max-width: none;
+    width: 100%;
+  }
+}
+
+// since the 3px padding added by hover-border mixin makes the image a little
+// smaller than the text, we compensate by adding a little padding to the size
+// of the header and excerpt using pixels like in the border soit doesnt scale
+// with the font-size
+
+.blog__item-header, .blog__item-excerpt {
+  padding: 0 3px;
+}
+
+// styling the text
+
+// post tag
+.blog__item-tag {
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #929292;
+  margin-bottom: 0.5em;
+
+  @include hover-underline;
+}
+
+// post title
+.blog__item-title {
+  font-weight: bold;
+  color: $color-base;
+  font-size: em(20);
+  margin-bottom: 1rem;
+
+  a {
+    color: inherit;
+
+    @include hover-underline;
+  }
+}
+
+// post excerpt
+
+.blog__item-excerpt {
+  color: #494949;
+  line-height: 1.9;
+
+  p {
+    margin-bottom: 1.5em;
+  }
+}
+
+// read more
+
+.blog__item-read {
+  // basic styles
+  display: block;
+  text-align: right;
+  color: $color-highlight;
+  font-weight: bold;
+
+  @include hover-underline;
+  // pseudo-element to add the right double-angle character (right quote)
+  &::after {
+    content: " \00bb";
+  }
+}
