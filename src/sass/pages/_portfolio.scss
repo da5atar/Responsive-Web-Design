@@ -1,0 +1,44 @@
+//
+//-- Portfolio
+//
+
+// Portfolio section nav
+
+.portfolio__nav {
+  text-align: left;
+  margin-bottom: 2em;
+}
+
+// links
+
+.portfolio__nav-item {
+  color: #4d4d4d;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+  display: block;
+  font-size: em(22);
+  margin-bottom: 1.25em;
+
+  &:hover, &.is-active {
+    color: $color-highlight;
+
+  }
+}
+
+// images
+
+.portfolio__item {
+  display: block;
+  margin-bottom: 2em;
+  text-decoration: none;
+
+  @include hover-border;
+  
+  // make the image fit the entire space of the grid column by stretching the image
+  img {
+    max-width: none; // turns off max-width rule set in _reset.scss
+    width: 100%
+  }
+}

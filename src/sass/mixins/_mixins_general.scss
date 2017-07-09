@@ -28,3 +28,14 @@
     text-decoration: underline;
   }
 }
+
+// mixin for hovering images with a border effect used in blog and portfolio sections
+
+@mixin hover-border {
+  border: 3px solid transparent;
+  transition: border 0.2s ease;
+
+  &:hover {
+    border-color: $color-highlight;
+  }
+}
