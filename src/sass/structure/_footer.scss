@@ -18,7 +18,11 @@
 
 .footer-module__icon, .footer-module__content {
 	display: inline-block;
-	vertical-align: top;
+	vertical-align: middle;
+
+	@include tablet-port {
+		vertical-align: top;
+	}
 }
 
 .footer-module__icon {

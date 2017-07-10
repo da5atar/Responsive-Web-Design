@@ -14,14 +14,31 @@
 // Style the contact__wrapper (measurements taken from the .psd design)
 .contact__wrapper {
   max-width: em(978);
-  padding: em(150) 0;
+  padding: em(40) 0;
+
+  @include tablet-port {
+    padding: em(75) 0;
+  }
+
+  @include wide {
+    padding: em(150) 0;
+  }
 }
 // general font-size for the form
 .contact-form {
-  font-size: em(18);
+  font-size: em(14);
+
+  @include tablet-port {
+    font-size: em(16);
+  }
+
+  @include wide {
+    font-size: em(18);
+  }
 }
 // the form controls in the button will follow because we set them to font-size: 100%
 // in the _typography.scss file
+
 // a little margin below each container
 .contact-form__container {
   margin-bottom: 0.75em;

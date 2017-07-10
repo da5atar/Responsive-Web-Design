@@ -6,11 +6,25 @@
 	background: $color-base url(../images/welcome_background.jpg) no-repeat center center;
 	background-size: cover;
 	position: relative;
-	height: em(740);
+	height: em(200); // for smaller screens
+
+	// adjust the font-size and the height of the sections for bigger screens
+	@include tablet-port {
+		height: em(350);
+	}
+	@include tablet-port {
+		height: em(600);
+	}
+	@include tablet-port {
+		height: em(740);
+	}
+	@include retina {
+		background-image: url(../images/welcome_background@2x.jpg);
+	}
 }
 
 .welcome__title {
-	font-size: rem(118);
+	font-size: rem(48);
 	text-transform: uppercase;
 	font-weight: 300;
 	color: #FFF;
@@ -18,10 +32,28 @@
 	line-height: 1;
 	text-align: center;
 	@include vertical-center;
+
+	//progressively scale the font-size for the title
+	@include tablet-port {
+		font-size: rem(72);
+	}
+
+	@include wide {
+		font-size: rem(118);
+	}
 }
 
 .welcome__title-complement {
-	font-size: rem(36);
+	font-size: rem(14);
 	display: block;
 	font-weight: 600;
+
+	//progressively scale the font-size for the title complement
+	@include tablet-port {
+		font-size: rem(24);
+	}
+
+	@include wide {
+		font-size: rem(36);
+	}
 }

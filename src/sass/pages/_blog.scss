@@ -5,8 +5,18 @@
 // General styles for the blog post
 
 .blog__item {
-  font-size: em(18);
-  margin-bottom: 4em;
+  font-size: em(14);
+  margin-bottom: 2em;
+
+  @include tablet-port {
+    font-size: em(16);
+    margin-bottom: 3em;
+  }
+
+  @include wide {
+    font-size: em(18);
+    margin-bottom: 4em;
+  }
 }
 
 // add a margin for the image container and hover-border mixin for the links
